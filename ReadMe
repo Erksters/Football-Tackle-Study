@@ -9,3 +9,7 @@ The subgoals to accomplish this goal are as follows:
   etc...
   
 All python files should be able to run independently. They will typically ask for the desired video to work on when ran. 
+Requirements to run:
+OPENCV installed ( pip install opencv-python)
+imutils installed 
+numpy installed 
