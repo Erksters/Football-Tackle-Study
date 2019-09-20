@@ -1,0 +1,11 @@
+This Program was created for research purposes at Kansas State University by Erick Saenz under the supervision of Dr.Hsu and in collaboration with Dr. Scott Dietrich
+
+The overall goal of this project is as follows:
+   Accurately measure tackling proficiency amoung youth by the Standardized Assessment of Tackling Technique (SATT) with Machines (Computer Vision)
+
+The subgoals to accomplish this goal are as follows:
+  Identify a player before they tackle accurately
+  Determine if the shins and back of the player are parallel
+  etc...
+  
+All python files should be able to run independently. They will typically ask for the desired video to work on when ran. 
