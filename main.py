@@ -33,15 +33,20 @@ while capture.isOpened():
     AddContours(contours,frame1,showBoxes)
 
     '''Here we are showing all of the images produced'''
-    ShowOrig(frame1)
+    if(showBoxes):
+        ShowBoxes(frame1)
+
+    if(showGrayScale):
+        ShowGray(GrayedImage)
+
+    if(showContours):
+        ShowContours(contours,frame1)
+
     frame1 = frame2
     ret, frame2 = capture.read()
-    # if(showGrayScale):
-    #     showGrayScale(GrayedImage)
-    # if(showContours):
-    #     showContours(frame1)
-    # if(showBoxes):
-    #     showBoxes(frame1)
+
+
+
 
 
     key = cv2.waitKey(1)
