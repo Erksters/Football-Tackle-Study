@@ -1,6 +1,17 @@
+def instructions():
+    '''
+    :return: A string for the user to read. Will provide instructions the user MUST know
+    :rtype: String
+    '''
+    return ("Opening Video Player. It may be hiding (check taskbar) \nPress 'Spacebar' to exit video playback or 'S' to stop playback temporarily")
 
 def askVideoPath():
-    return (str(input("Enter video name ")))
+    '''
+    This will ask for the path and video name of the video the user want's to specify
+    :return: Video Path + Video Name
+    :rtype: String
+    '''
+    return (str(input("Enter <video path/video name> ")))
 
 def ShowContour():
     '''
