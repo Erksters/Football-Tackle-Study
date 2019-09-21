@@ -2,14 +2,22 @@ This Program was created for research purposes at Kansas State University by Eri
 
 The overall goal of this project is as follows:
    Accurately measure tackling proficiency amoung youth by the Standardized Assessment of Tackling Technique (SATT) with Machines (Computer Vision)
+   
+   The SATT3 rubric is found under Notes/Spread_Sheets/
 
 The subgoals to accomplish this goal are as follows:
-  Identify a player before they tackle accurately
-  Determine if the shins and back of the player are parallel
-  etc...
+  0) Identify a player before they tackle accurately   <--- (Currently Working on this)
+  Measure:
+  1) PC - Player Control 
+  2) HET - Head Eye Torso Position 
+  3) SZ - Strike Zone 
+  4) Ascending Hit /Upward Arm Rips
+  5) Leg Drive 
   
-All python files should be able to run independently. They will typically ask for the desired video to work on when ran. 
-Requirements to run:
-OPENCV installed ( pip install opencv-python)
-imutils installed 
-numpy installed 
+ 
+All python files should be able to run independently. 
+REQUIREMENTS: (PIP install)
+OPENCV installed  (v4.1.1.26) -->(pip install opencv-python)
+imutils installed (v0.5.3)
+numpy installed (v1.17.2)
+pytube installed (v9.5.2)
