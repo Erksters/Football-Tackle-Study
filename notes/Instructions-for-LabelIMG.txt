@@ -1,0 +1,43 @@
+Hello! Welcome to the LabelImg installation guide!
+The purpose of this guide is to help you create bounding boxes for whatever is found amongst images you provide.
+Following these next few steps will help you install the software needed to use the LabelImg application. 
+
+1. Download python[3.7.1] Installer for your computer[Windows 10]
+
+[RECOMMENDED] 64-bit https://www.python.org/ftp/python/3.7.1/python-3.7.1-amd64.exe
+OR
+32-bit https://www.python.org/ftp/python/3.7.1/python-3.7.1.exe
+
+2. Run the Installer. Ensure you checkmark the "Add Python 3.7 to PATH" at the beginning of the installation process.
+
+3. Copy all files from THIS repository. This can be done by clicking on the green "Clone or Download" button on the right side of the screen.
+   It will then provide a blue-text "Download ZIP" option. 
+   Click on that option and download the ZIP file onto your Desktop[or somplace easy to access].
+   Extract the contents of the ZIP file and move onto step 4.
+https://github.com/Erksters/Football-Tackle-Study
+
+4. At this point you now have the application software for LabelImg and a programming language[Python 3.7.1] to interpret this software, however, there are a few missing libraries that need to be installed. 
+
+5. To install these missing libraries, we will use "pip install" in your command window.
+
+6. Open a command window and enter the following commands individually:
+
+			pip install lxml 
+			pip install pyqt5
+
+7. That should be all of the libraries needed. 
+8. Now navigate to the extracted ZIP file contents. The file "labelImg.py" should be found in >>/Extracted_ZIP_File/labelImg-1.5.2/labelImg.py
+
+9. Double click on labelImg.py to begin annotating! 
+
+10. Additional help:
+	If Double clicking the file "labelImg.py" fails to open the application, you may be able to identify the error by:
+		1. open a command window and change directory's to said file.
+		2. run "python labelImg.py" once you are there.
+		3. read the error's
+
+	If you see an "Import Error: DLL load failed when importing PyQt5" then you have installed the incorrect Python in step 1. Go through all the steps again and see if the application opens then. 
+
+	If you see a ModuleNotFoundError, you did not pip install said Module.
+
+	

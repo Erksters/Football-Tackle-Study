@@ -1,7 +1,7 @@
-from Python_Scripts.Helpers import *
+from src.Helpers import *
 import cv2
-from Python_Scripts.UX import *
-from Python_Scripts.MotionDetection import *
+from src.UX import *
+from src.MotionDetection import *
 
 usersVideo = askVideoPath()
 capture = cv2.VideoCapture(usersVideo) #'video1.mp4'
