@@ -7,7 +7,7 @@ def instructions():
 
 def askVideoPath():
     '''
-    This will ask for the path and video name of the video the user want's to specify
+    This will ask for the path and video name of the video the user want's to analyze
     :return: Video Path + Video Name
     :rtype: String
     '''

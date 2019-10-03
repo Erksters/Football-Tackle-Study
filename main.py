@@ -6,6 +6,7 @@ from src.MotionDetection import *
 '''Ask the user what video will be analyzed'''
 usersVideo = askVideoPath()
 capture = cv2.VideoCapture(usersVideo)
+ListCellCapture = cv2.VideoCapture(usersVideo)
 
 '''Ask the user what they want to see'''
 showGrayScale = ShowGrayScaleMotion()
@@ -17,7 +18,11 @@ print(instructions())
 ret, frame1 = capture.read()
 ret, frame2 = capture.read()
 
+
+
 while capture.isOpened():
+
+
     DifferenceInBothFrames = Diff(frame1,frame2)
     GrayedImage = ToGray(DifferenceInBothFrames)
     BlurredImage = ApplyGausBlur(GrayedImage)
