@@ -1,7 +1,7 @@
 import time
 from src.LinkedListCells import *
 
-usersVideo = "D:/Ksu_Football_Tackle_Study/Online Repo/Football-Tackle-Study/data/Videos/7.MOD"
+usersVideo = "D:/Ksu_Football_Tackle_Study/Online Repo/Football-Tackle-Study/data/Videos/1.MP4"
 
 newCell = AddDatatoCells(usersVideo)
 print("Identify the frame where the player has almost touch the bag.")
