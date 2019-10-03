@@ -26,8 +26,11 @@ def AddDatatoCells(Video):
         count = count + 1
     capture.release()
 
+    print("*****Frames Done Loading*****\n\n")
+
     while(CurrentCell.Prev != None):
         CurrentCell = CurrentCell.Prev
+
     return CurrentCell
 
 def SkipFive(LinkCell):

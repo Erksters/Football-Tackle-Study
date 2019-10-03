@@ -2,11 +2,14 @@ from src.Helpers import *
 import time
 from src.UX import *
 from src.MotionDetection import *
+from src.PreBagTackle import FindPreBagTackle
 
 '''Ask the user what video will be analyzed'''
 usersVideo = askVideoPath()
 capture = cv2.VideoCapture(usersVideo)
-ListCellCapture = cv2.VideoCapture(usersVideo)
+
+'''Find the Perfect PreTackle Frame'''
+PerfectFrame = FindPreBagTackle(usersVideo)
 
 '''Ask the user what they want to see'''
 showGrayScale = ShowGrayScaleMotion()
@@ -18,10 +21,7 @@ print(instructions())
 ret, frame1 = capture.read()
 ret, frame2 = capture.read()
 
-
-
 while capture.isOpened():
-
 
     DifferenceInBothFrames = Diff(frame1,frame2)
     GrayedImage = ToGray(DifferenceInBothFrames)
