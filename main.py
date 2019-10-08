@@ -3,7 +3,7 @@ import time
 from src.UX import *
 from src.MotionDetection import *
 from src.PreBagTackleFinder import FindPreBagTackle
-from src.LinkedListCells import ReleaseLinkedList
+from src.LinkedListCells import *
 
 '''Ask the user what video will be analyzed'''
 # usersVideo = askVideoPath()
@@ -26,13 +26,15 @@ print(instructions())
 ret, frame1 = capture.read()
 ret, frame2 = capture.read()
 
+CellToBeAnalyzed = LinkedListCells()
+count = 0
+
 '''Show the user their specifications like showBoxes, showContours, and showGrayScale'''
 while capture.isOpened():
 
     DifferenceInBothFrames = Diff(frame1,frame2)
     GrayedImage = ToGray(DifferenceInBothFrames)
     BlurredImage = ApplyGausBlur(GrayedImage)
-
 
     '''This is where the contours are found. Not sure how it happens'''
     _, thresh = cv2.threshold(BlurredImage, 20, 255, cv2.THRESH_BINARY)
@@ -41,6 +43,10 @@ while capture.isOpened():
     '''Go here for origional source:
      https://gist.github.com/pknowledge/623515e8ab35f1771ca2186630a13d14
     '''
+
+    if(count == PerfectFramePosition):
+        SaveContours(CellToBeAnalyzed, frame1, contours)
+
 
     '''Here the Contours are applied onto the 'frame1' and boxes are drawn (if desired) but no contours'''
     AddContours(contours,frame1,showBoxes)
@@ -70,4 +76,6 @@ cv2.destroyAllWindows()
 capture.release()
 
 '''Now Assess the image '''
+
+print("Cell to be analyzed info:\n", CellToBeAnalyzed.x , CellToBeAnalyzed.y , CellToBeAnalyzed.Position)
 

@@ -14,6 +14,20 @@ def AddContours(contours, frame1,showBoxes):
         if (cv2.contourArea(contour) > 100000 and showBoxes ):
             cv2.rectangle(frame1, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
+def SaveContours(LinkedListCell,frame, contours, position):
+    LinkedListCell.Data = frame
+    LinkedListCell.Position = position
+
+    for contour in contours:
+        # prepare to create a box around the moving object
+        (x, y, w, h) = cv2.boundingRect(contour)
+
+        if (cv2.contourArea(contour > 100000)):
+            LinkedListCell.x = x
+            LinkedListCell.y = y
+            LinkedListCell.w = w
+            LinkedListCell.h = h
+
 def ShowContours(contours, frame1):
     cv2.drawContours(frame1, contours, -1, (0, 255, 0), 2)
     cv2.imshow("With Contours", Resize(frame1))

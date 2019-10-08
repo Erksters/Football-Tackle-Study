@@ -3,7 +3,7 @@ def instructions():
     :return: A string for the user to read. Will provide instructions the user MUST know
     :rtype: String
     '''
-    return ("Opening Video Player. It may be hiding (check taskbar) \nPress 'Spacebar' to exit video playback or 'S' to stop playback temporarily")
+    return ("Opening Video Player. It may be hiding (check taskbar) \nPress 'Spacebar' to exit video playback or 'S' to stop playback temporarily\n")
 
 def askVideoPath():
     '''
