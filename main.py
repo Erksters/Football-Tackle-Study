@@ -2,14 +2,19 @@ from src.Helpers import *
 import time
 from src.UX import *
 from src.MotionDetection import *
-from src.PreBagTackle import FindPreBagTackle
+from src.PreBagTackleFinder import FindPreBagTackle
+from src.LinkedListCells import ReleaseLinkedList
 
 '''Ask the user what video will be analyzed'''
-usersVideo = askVideoPath()
+# usersVideo = askVideoPath()
+usersVideo = "D:/Ksu_Football_Tackle_Study/Online Repo/Football-Tackle-Study/data/Videos/1.mp4"
 capture = cv2.VideoCapture(usersVideo)
 
-'''Find the Perfect PreTackle Frame'''
-PerfectFrame = FindPreBagTackle(usersVideo)
+'''Find the Perfect PreTackle Frame with LinkedListCell'''
+PerfectFrame = FindPreBagTackle(usersVideo) #Hold onto the frame position
+PerfectFramePosition = PerfectFrame.Position
+ReleaseLinkedList(PerfectFrame)
+print("The frame you have selected is the {0}th frame".format(PerfectFramePosition))
 
 '''Ask the user what they want to see'''
 showGrayScale = ShowGrayScaleMotion()
@@ -21,6 +26,7 @@ print(instructions())
 ret, frame1 = capture.read()
 ret, frame2 = capture.read()
 
+'''Show the user their specifications like showBoxes, showContours, and showGrayScale'''
 while capture.isOpened():
 
     DifferenceInBothFrames = Diff(frame1,frame2)
@@ -55,10 +61,13 @@ while capture.isOpened():
     key = cv2.waitKey(1)
 
     if key == ord(" "):
+        capture.release()
         break
     if key == ord("s"):
         time.sleep(5)
 
 cv2.destroyAllWindows()
 capture.release()
+
+'''Now Assess the image '''
 

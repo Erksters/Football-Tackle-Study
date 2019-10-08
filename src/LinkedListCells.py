@@ -9,6 +9,11 @@ class LinkedListCells:
         self.Prev = None
         self.Position = None
 
+        self.x = None
+        self.y = None
+        self.w = None
+        self.h = None
+
 def AddDatatoCells(Video):
     capture = cv2.VideoCapture(Video)
     CurrentCell = LinkedListCells()
@@ -42,3 +47,10 @@ def PrevFive(LinkCell):
     for i in range(5):
         LinkCell = LinkCell.Prev
     return LinkCell
+
+def ReleaseLinkedList(Head):
+    while(Head.Prev != None):
+        Head = Head.Prev
+    while(Head.Next != None):
+        Head.Data = None
+        Head = Head.Next
