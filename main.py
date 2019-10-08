@@ -7,7 +7,7 @@ from src.LinkedListCells import *
 
 '''Ask the user what video will be analyzed'''
 # usersVideo = askVideoPath()
-usersVideo = "D:/Ksu_Football_Tackle_Study/Online Repo/Football-Tackle-Study/data/Videos/1.mp4"
+usersVideo = "D:/Ksu_Football_Tackle_Study/Online Repo/Football-Tackle-Study/data/Videos/11.MOD"
 capture = cv2.VideoCapture(usersVideo)
 
 '''Find the Perfect PreTackle Frame with LinkedListCell'''
@@ -45,7 +45,7 @@ while capture.isOpened():
     '''
 
     if(count == PerfectFramePosition):
-        SaveContours(CellToBeAnalyzed, frame1, contours)
+        SaveContours(CellToBeAnalyzed, frame1, contours,count)
 
 
     '''Here the Contours are applied onto the 'frame1' and boxes are drawn (if desired) but no contours'''
@@ -71,6 +71,7 @@ while capture.isOpened():
         break
     if key == ord("s"):
         time.sleep(5)
+    count+=1
 
 cv2.destroyAllWindows()
 capture.release()

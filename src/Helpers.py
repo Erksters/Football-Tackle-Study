@@ -22,7 +22,7 @@ def SaveContours(LinkedListCell,frame, contours, position):
         # prepare to create a box around the moving object
         (x, y, w, h) = cv2.boundingRect(contour)
 
-        if (cv2.contourArea(contour > 100000)):
+        if (cv2.contourArea(contour) > 100000):
             LinkedListCell.x = x
             LinkedListCell.y = y
             LinkedListCell.w = w
